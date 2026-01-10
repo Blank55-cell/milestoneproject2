@@ -1,0 +1,40 @@
+/* Layout for the entire site */
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: black;
+    color: white;
+}
+
+a {
+    color: #4da3ff;
+    text-decoration: none;
+}
+
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Nav + Header */
+header {
+    background-color: #181818;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-weight: 600;
+    letter-spacing: 0.03rem;
+
+}
+
+nav a {
+    margin-left: 1rem;
+    font-size: 0.95rem;
+}

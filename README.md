@@ -145,6 +145,89 @@ These are the general layouts planned for each page as the project grows.
 
 ---
 
+
+
+## Website Testing
+
+Manual testing will be documented here.
+
+### Navigation
+- 
+
+### Layout
+- 
+
+### JavaScript
+- 
+
+### Responsiveness
+- 
+
+### Validation
+- 
+
+### Page-by-Page Testing
+*Will add tables in once testing begins. Each section will have either a table of the testing conducted or an image of any succesful passes either carried out by w3c validator or chrome lighhouse i changed it to this manner to avoid the testing areas being cluttered around my README.md as it made the layout look disorganised*
+
+
+
+
+---
+
+
+## Deployment
+
+The site is deployed using GitHub Pages.
+
+### Steps Taken
+1. Open the GitHub repository.
+2. Go to **Settings → Pages**.
+3. Under "Source", select:
+   - Branch: `main`
+   - Folder: `/root`
+4. Save the settings.
+5. GitHub Pages will generate a live link after a few moments.
+
+### Live Site
+*(Your games tool site)*
+
+### Running Locally
+1. Clone the repository or download the ZIP.
+2. Open the project folder.
+3. Open `index.html` in your browser.
+
+
+---
+
+## UX
+
+The UX decisions for the Game Tools Hub are shaped around a sci‑fi theme with darker colours, reflecting the atmosphere of strategy games. The goal was to create an interface that feels modern, slightly futuristic, and comfortable to use during long sessions, while still keeping everything simple and functional.
+
+### Clarity
+The layout stays clean and minimal so players can focus on the tools without distractions. Each page has a single purpose, reducing the amount of information on screen at once. This mirrors the way players typically use external resources during strategy games — quickly, efficiently, and often mid‑match.
+
+### Accessibility
+The darker colour palette was chosen to reduce eye strain, especially for players who alt‑tab frequently or play in low‑light environments. High‑contrast text and simple typography help keep everything readable. Semantic HTML ensures the site remains accessible across devices and screen sizes.
+
+### Consistency
+All pages follow the same structural pattern: a dark background, neon‑style accents, and a clean header/footer layout. This consistency helps reinforce the sci‑fi theme while making navigation predictable. Whether a player is checking tools, guides, or game info, the interface feels unified.
+
+### Engagement
+The sci‑fi style adds personality without overwhelming the content. Tool cards, glowing borders, and subtle hover effects give the site a sense of depth and interactivity. Even before the tools are fully implemented, the design communicates that this is a functional hub built for players.
+
+### Efficiency
+The site avoids unnecessary frameworks and heavy scripts to keep loading times fast. Strategy players often switch between the game and external tools, so the interface needs to be lightweight and responsive. The dark theme also helps the site blend naturally with the look of many modern strategy games.
+
+### Player‑Focused Design
+The overall structure reflects the original motivation behind the project: making it easier for players to access clear, simple tools without digging through wikis or spreadsheets. The sci‑fi aesthetic supports that goal by giving the site a focused, tactical feel — something that matches the mindset of players who want to optimise, plan, and improve their gameplay.
+
+
+
+
+
+---
+
+
 ## Disclaimer
 
 This is a fan-made project and is not affiliated with Bytro Labs or the official Supremacy 1914 developers. All game data and mechanics belong to their respective owners.

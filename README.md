@@ -228,6 +228,32 @@ The overall structure reflects the original motivation behind the project: makin
 ---
 
 
+## CSS Bug Report
+
+| Bug Description | Reason for Breaking | How I Fixed It |
+|-----------------|---------------------|-----------------|
+| Tool cards were sticking to the left side of the page | I forgot to add `margin: 0 auto` inside `main` | Added the margin so the layout centers properly |
+| Cards were collapsing into one column too early | My `minmax(240px, 1fr)` value was too wide for smaller screens | Reduced the min width and tested breakpoints |
+| Hover glow looked messy and uneven | I used too strong a `box-shadow` value | Lowered the opacity to make the glow subtle |
+| Tagline text looked washed out | The colour I picked was too bright on a dark background | Darkened the `.tagline` colour |
+| Footer spacing looked inconsistent across pages | I forgot to add padding on some pages | Standardised the footer padding |
+| Buttons inside cards didn’t line up properly | Padding and border radius didn’t match the card style | Adjusted `.tool-button` padding and radius |
+| Card borders looked too sharp and bright | Border colour didn’t match the darker cyberpunk theme | Switched to a deeper, muted border colour |
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
 ## Disclaimer
 
 This is a fan-made project and is not affiliated with Bytro Labs or the official Supremacy 1914 developers. All game data and mechanics belong to their respective owners.

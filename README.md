@@ -32,6 +32,7 @@ This is a small project I'm building to collect simple tools for strategy games.
 - **JavaScript** / **BootStrap**
 - **Git**
 - **Pythontutor**
+- **JSlint**
 
 
 
@@ -83,6 +84,49 @@ Each page is kept simple and focused. The goal is to make it easy for players to
 
 ---
 
+## Features
+
+### Current Features
+- Dark, sci‑fi‑inspired UI  
+- Responsive layout  
+- Navigation across all pages  
+- Working Healing Calculator  
+- Clicker minigame with timer and score tracking  
+- Strategy guide summaries with credits  
+- Clean tool card layout for future tools  
+
+### Planned Features
+- Stack/Army Composition Helper  
+- Resource Planner  
+- Commander/Bonus Reference  
+- Full strategy guide pages  
+- Expandable/collapsible guide sections  
+- Additional minigames for testing UI interactions  
+
+
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
 ## Current Content
 
 Here’s a quick look at what each page currently contains. This will change as more tools and features are added, but this is the state of things right now.
@@ -104,7 +148,7 @@ This is where all the calculators and planners will live. For now, it has a plac
 
 ## Visual Style
 
-The site is meant to stay clean and easy to read. The layout uses simple fonts, clear spacing, and a dark background that works well during long gaming sessions. There are no ads or distracting elements, and the pages are kept light so they load quickly on both desktop and mobile.
+The site is meant to stay clean and easy to read. The layout uses simple fonts, clear spacing, and a dark background that works well during long gaming sessions. There are no ads or distracting elements, and the pages are kept light so they load quickly on both desktop and mobile. I will try and maintain this level up to standard as i go about creating this i will try to also incorporate the 
 
 ---
 
@@ -143,12 +187,13 @@ These are the general layouts planned for each page as the project grows.
 ### Phase 2 — First Tools
 - Healing calculator  
 - Resource planner  
-- Commander/bonus reference  
+- Commander/bonus reference 
 
 ### Phase 3 — UI Improvements
 - Tool cards  
 - Dark mode adjustments  
 - Better mobile layout  
+- Pulse like neon effect will be added as well
 
 ### Phase 4 — More Tools
 - Army composition helper  
@@ -279,7 +324,6 @@ The overall structure reflects the original motivation behind the project: makin
 
 
 
-## JS Bug Report
 | Bug Description | Reason For Bug | How I Fixed It |
 |-----------------|----------------------------|----------------|
 | Test button didn’t do anything | Clicked it, nothing happened — then searched online and found out that Python Tutor doesn’t handle DOM stuff | Realized I’d commented out `initTestButton()`, so I just re-enabled it |
@@ -289,6 +333,9 @@ The overall structure reflects the original motivation behind the project: makin
 | “JavaScript loaded” printed twice | Console showed the log twice — turns out I had two `DOMContentLoaded` blocks | Deleted the extra one and kept just one listener |
 | Healing calculator allowed negative hours | Tried `-5` and got negative healing, which makes no sense | Added a check to block negative input and return `0` instead |
 | Test button alert fired twice (outside Python Tutor) | Couldn’t test this in Python Tutor, but saw it happen in the browser | Made sure the event listener only attaches once |
+| Start button didn’t trigger the game | Clicked “Start” and nothing happened — the UI didn’t update at all | JS was targeting `#startButton` but my HTML used `id="start-btn"`, so the selector returned `null`. Updated the JS to match the existing HTML ID. |
+| Timer kept going into negative numbers | The countdown hit 0 but continued to -1, -2, -3… | I’d forgotten to call `clearInterval(timer)` inside the `if (time <= 0)` block. Added it so the interval stops correctly. |
+| Click button stayed disabled | Pressed “Start” but the click button never activated | JS was enabling `clickButton`, but the selector was wrong (`#clickButton` instead of `#click-btn`). Fixed the selector and the button enabled normally. |
 
 
 

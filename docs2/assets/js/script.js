@@ -4,6 +4,17 @@
 // Run code after the page loads
 document.addEventListener("DOMContentLoaded", () => {
     console.log("JavaScript loaded");
+
+    // Minihgame 
+    let time = 60;
+    let clicks = 0;
+    let timer
+
+    const startButton = document.querySelector("#start-btn");
+    const clickButton = document.querySelector("#click-btn");
+    const timeDisplay = document.querySelector("#time-left");
+    const clickCountDisplay = document.querySelector("#click-count");
+    
     // initTestButton();
 });
 
@@ -34,6 +45,11 @@ function calculateStackPower(infantry, cavalry, artillery) {
 function $(selector) {
     return document.querySelector(selector);
 }
+
+
+
+
+
 
 
 // Might tweak this once the in game numbers are tested 

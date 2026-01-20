@@ -61,18 +61,29 @@ function initTestButton() {
 
 
 // Basic healing calculator
-const unitsInput = document.querySelector(#unitsInput);
-const hoursInput = document.querySelector(#hoursInput);
-const healButton = document.querySelector(#healButton);
-const healOutput = document.querySelector(#healOutput);
+// Forgot to add in quotes for the selectors
+const unitsInput = document.querySelector("#unitsInput");
+const hoursInput = document.querySelector("#hoursInput");
+const healButton = document.querySelector("#healButton");
+const healOutput = document.querySelector("#healOutput");
 
 if (unitsInput && hoursInput && healButton && healOutput) {
     healButton.addEventListener("click", () => {
         const units = Number(unitsInput.value);
         const hours = Number(hoursInput.balue);
-    })
 
-}
+        if (isNaN(units) || isNaN(hours) || units < 0 || hours < 0 ) {
+            healOutput.textContent = "Please enter the correct values.";
+            return;
+        }
+
+        const healed = healingCalculator(units, hours);
+        healOutput.textContent = `Estimated healed units: ${Math.round(healed)}`;
+     });
+
+   
+
+};
 
 
 

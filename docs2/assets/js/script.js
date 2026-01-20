@@ -1,7 +1,5 @@
 // Run code after the page loads
 
-
-// Run code after the page loads
 document.addEventListener("DOMContentLoaded", () => {
     console.log("JavaScript loaded");
 

@@ -88,7 +88,7 @@ main {
 
 
 
-.video-backround {
+.video-background {
   opacity: 0.98;
 }
 
@@ -100,14 +100,10 @@ main {
 }
 
 .video-background {
-  positon: absolute;
+  position: absolute;
 }
 
-/* Universal styles */
-.section-banner {
-    padding: 4rem 2 rem;
-    text-align: center;
-}
+
 
 
 

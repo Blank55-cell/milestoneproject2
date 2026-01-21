@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log("JavaScript loaded");
 
-    // Minihgame 
+    // Minigame 
     let time = 5;
     let clicks = 0;
     let timer

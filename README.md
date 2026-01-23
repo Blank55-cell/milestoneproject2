@@ -324,6 +324,9 @@ The overall structure reflects the original motivation behind the project: makin
 
 
 
+
+## JS Bug Report
+
 | Bug Description | Reason For Bug | How I Fixed It |
 |-----------------|----------------------------|----------------|
 | Test button didn’t do anything | Clicked it, nothing happened — then searched online and found out that Python Tutor doesn’t handle DOM stuff | Realized I’d commented out `initTestButton()`, so I just re-enabled it |
@@ -336,7 +339,12 @@ The overall structure reflects the original motivation behind the project: makin
 | Start button didn’t trigger the game | Clicked “Start” and nothing happened — the UI didn’t update at all | JS was targeting `#startButton` but my HTML used `id="start-btn"`, so the selector returned `null`. Updated the JS to match the existing HTML ID. |
 | Timer kept going into negative numbers | The countdown hit 0 but continued to -1, -2, -3… | I’d forgotten to call `clearInterval(timer)` inside the `if (time <= 0)` block. Added it so the interval stops correctly. |
 | Click button stayed disabled | Pressed “Start” but the click button never activated | JS was enabling `clickButton`, but the selector was wrong (`#clickButton` instead of `#click-btn`). Fixed the selector and the button enabled normally. |
-
+| Healing calculator didn’t respond at all | The JS was running before the page finished loading, so none of the elements existed yet | Wrapped the whole calculator logic inside `DOMContentLoaded` so it only runs once the page is ready |
+| Healing calculator kept giving `NaN` | Inputs were being read as empty strings or invalid values | Converted the inputs using `Number()` and added a simple `isNaN()` check to stop bad values |
+| JS didn’t load on the tools page | The script path in the HTML was pointing to the wrong file name | Fixed the `<script src="assets/js/script.js">` path so the browser actually loads the right file |
+| Minigame buttons weren’t being detected | The selectors in JS didn’t match the IDs in the HTML (`startButton` vs `start-btn`) | Updated the selectors so they match the actual IDs used in the markup |
+| Click counter stayed stuck at 0 | The click event was firing, but the wrong variable name was being updated | Pointed the update to the correct display element (`click-count`) so the number actually changes |
+| Timer didn’t stop at 0 | The interval kept running because the stop condition wasn’t clearing it | Added `clearInterval(timer)` inside the `if (time <= 0)` block to shut the timer off properly |
 
 
 

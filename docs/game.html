@@ -3,17 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Basic SEO -->
   <meta name="description" content="Game Tools Hub - simple tools, guides, and planners for strategy games like Supremacy 1914." /> 
   <meta name="keywords" content="Supremacy 1914, strategy tools, game calculators, planners, guides" /> 
-  <meta name="author" content="Carlos" />
+  <meta name="author" content="Carlos"/>
+
   <title>Supported Games</title>
 
-
+  <!-- Bootstrap + my CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/stylle.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body>
 
+<!-- Simple nav -->
 <nav>
   <a href="index.html">Home</a>
   <a href="game.html">Games</a>
@@ -22,53 +27,52 @@
 </nav>
 
 <main>
-  
+
+  <!-- Page intro -->
   <section class="section-intro fade-in">
      <h2 class="section-title">Minigame</h2>
      <p class="section-subtitle"></p>
-  
   </section>
 
-
- 
+  <!-- Game block -->
   <section class="section-block fade-in">
     <div id="game-container" class="tool-cards">
+
+      <!-- Game title -->
       <h2 class="tool-title">Click Speed Test</h2>
       <p class="tool-description">Click the button as quickly as possible</p>
 
-
+      <!-- Start button -->
       <button id="start-btn" class="tool-button">Click To Start</button>
 
-    <div id="game-ui" class="game-ui">
-      <p>Time Left: <span id="time-left">5</span></p>
-      <p>Clicks: <span id="click-count">0</span></p>
-      <button id="click-btn" class="tool-button">Click</button>
-    </div>  
+      <!-- Game UI -->
+      <div id="game-ui" class="game-ui">
+        <p>Time Left: <span id="time-left">5</span></p>
+        <p>Clicks: <span id="click-count">0</span></p>
 
+        <!-- Main click button -->
+        <button id="click-btn" class="tool-button">Click</button>
+      </div>
 
-    <p id="game-results"></p>
+      <!-- Results -->
+      <p id="game-results"></p>
 
     </div>
   </section>
 
-
 </main>
 
 <footer>
-    <p class="text-muted">Fan-made project. Not affiliated with Bytro Labs GmbH.</p>
+  <p class="text-muted">Fan-made project. Not affiliated with Bytro Labs GmbH.</p>
 </footer>
 
-
-
-
-
 <!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
-integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Custom JS -->
-<script src="assets/script.js"></script>
+<!-- My JS -->
+<script src="assets/js/script.js"></script>
 
 </body>
 </html>
+
 

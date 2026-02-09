@@ -1,6 +1,6 @@
 # Game Tools Hub
 
-This is a small project I'm building to collect simple tools for strategy games. The aim is to make calculators, planners, and quick-reference guides easier to access without digging through long forum posts or spreadsheets. Supremacy 1914 is a bit of a niche game as well as its overshadowed by a lot of other games such as HOI4 (Hearts of Iron 4), but ultimately its a game that i've grown fond of, due to having played it with my close friends before but being super new at it we struggled a lot and we only just recently learned about niche strategies.
+This is a small project I'm building to collect simple tools for strategy games. The aim is to make calculators, planners, and quick-reference guides easier to access without digging through long forum posts or spreadsheets. Supremacy 1914 is a bit of a niche game as well as its overshadowed by a lot of other games such as HOI4 (Hearts of Iron 4), but ultimately its a game that I've grown fond of, due to having played it with my close friends before but being super new at it we struggled a lot and we only just recently learned about niche strategies.
 
 ---
 
@@ -23,26 +23,20 @@ This is a small project I'm building to collect simple tools for strategy games.
 - [Expectations vs Actual Outcomes](#expectations-vs-actual-outcomes)  
 - [Disclaimer](#disclaimer)
 
-
 ---
+
 ### Tools Used:
 
-- **HTML** 
-- **CSS**
-- **JavaScript** / **BootStrap**
-- **Git**
-- **Pythontutor**
+- **HTML**  
+- **CSS**  
+- **JavaScript** / **BootStrap**  
+- **Git**  
+- **Pythontutor**  
 - **JSlint**
 
-
-
-
-
-
 ### VSS extensions used:
-- **Betteralign** 
+- **Betteralign**  
 - **Liveserver**
-
 
 ---
 
@@ -76,9 +70,9 @@ Players who want quick, simple tools without needing to build their own spreadsh
 The site is built using four main HTML pages:
 
 - `index.html` – Homepage with a short intro and links to the rest of the site  
-- `game.html` –  Minigame section 
+- `game.html` – Minigame section  
 - `guide.html` – Strategy guides, tips, and breakdowns  
-- `tools.html` – Interactive tools like calculators and planners
+- `tools.html` – Interactive tools like calculators and planners  
 
 Each page is kept simple and focused. The goal is to make it easy for players to find what they need without clutter or distractions.
 
@@ -103,28 +97,6 @@ Each page is kept simple and focused. The goal is to make it easy for players to
 - Expandable/collapsible guide sections  
 - Additional minigames for testing UI interactions  
 
-
-
----
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 
 ## Current Content
@@ -143,15 +115,13 @@ A starting point for strategy guides. Right now it just has a brief intro, but i
 ### tools.html
 This is where all the calculators and planners will live. For now, it has a placeholder message explaining that the tools are still being built.
 
-
 ---
 
 ## Visual Style
 
-The site is meant to stay clean and easy to read. The layout uses simple fonts, clear spacing, and a dark background that works well during long gaming sessions. There are no ads or distracting elements, and the pages are kept light so they load quickly on both desktop and mobile. I will try and maintain this level up to standard as i go about creating this i will try to also incorporate the 
+The site is meant to stay clean and easy to read. The layout uses simple fonts, clear spacing, and a dark background that works well during long gaming sessions. There are no ads or distracting elements, and the pages are kept light so they load quickly on both desktop and mobile.
 
 ---
-
 ## Planned Page Layouts
 
 These are the general layouts planned for each page as the project grows.
@@ -162,18 +132,18 @@ These are the general layouts planned for each page as the project grows.
 - Small footer for version notes or updates  
 
 ### game.html
-- Will include a clicker minigame 
+- Will include a clicker minigame  
 
 ### guide.html
 - Intro paragraph  
 - Sections for different strategy topics  
-- Room for expandable/collapsible sections later  
+- Space for expandable/collapsible sections later  
 
 ### tools.html
 - Grid of tool cards  
 - Each card shows the tool name and a short description  
-- Button to open each tool  
-- Placeholder text until tools are finished  
+- Only simple, easy‑to‑use tools  
+- No placeholders or unfinished features  
 
 ---
 
@@ -182,30 +152,31 @@ These are the general layouts planned for each page as the project grows.
 ### Phase 1 — Structure
 - Basic pages  
 - Navigation  
-- Placeholder content  
+- Temporary filler content  
 
 ### Phase 2 — First Tools
 - Healing calculator  
-- Resource planner  
-- Commander/bonus reference 
+- Early reference cards  
 
 ### Phase 3 — UI Improvements
-- Tool cards  
-- Dark mode adjustments  
+- Tool card layout  
+- Dark mode tweaks  
 - Better mobile layout  
-- Pulse like neon effect will be added as well
+- Neon pulse effect  
 
-### Phase 4 — More Tools
-- Army composition helper  
-- Province management planner  
+### Phase 4 — Cleanup and Simplification
+- Removed Stack Helper, Resource Planner, Commander Reference  
+- Removed Army Composition Helper and Province Management Planner  
+- Removed Resource & Production Guide  
+- These were cut because they added too much complexity, required constant updates, or risked overwhelming players  
+- Focus shifted to small, clear tools that are easy to understand at a glance  
 
 ### Phase 5 — Expansion
-- Support for more games  
-- More guides and tools  
+- Add more guides  
+- Add support for more games  
+- Only add tools that stay simple and don’t clutter the page
 
 ---
-
-
 
 ## Website Testing
 
@@ -229,65 +200,51 @@ Manual testing will be documented here through the use of w3c for html pages and
 ### Page-by-Page Testing
 - Will add tables in once testing begins. Each section will have either a table of the testing conducted or an image of any succesful passes either carried out by w3c validator or chrome lighhouse i changed it to this manner to avoid the testing areas being cluttered around my README.md as it made the layout look disorganised
 
-
-
-
 ---
-
 
 ## Deployment
 
 The site is deployed using GitHub Pages.
 
 ### Steps Taken
-1. Open the GitHub repository.
-2. Go to **Settings → Pages**.
-3. Under "Source", select:
-   - Branch: `main`
-   - Folder: `/root`
-4. Save the settings.
+1. Open the GitHub repository.  
+2. Go to **Settings → Pages**.  
+3. Under "Source", select:  
+   - Branch: `main`  
+   - Folder: `/root`  
+4. Save the settings.  
 5. GitHub Pages will generate a live link after a few moments.
 
-### Live Site
-*(Your games tool site)*
-
 ### Running Locally
-1. Clone the repository or download the ZIP.
-2. Open the project folder.
+1. Clone the repository or download the ZIP.  
+2. Open the project folder.  
 3. Open `index.html` in your browser.
-
 
 ---
 
 ## UX
 
-The UX decisions for the Game Tools Hub are shaped around a sci‑fi theme with darker colours, reflecting the atmosphere of strategy games. The goal was to create an interface that feels modern, slightly futuristic, and comfortable to use during long sessions, while still keeping everything simple and functional. When applying this particular type of ui its also important to note that the use of these dark colours will be used in order to help the user not strain their eyes as the neon color can help to create a contrast for the dark colours used in the background of the website.
+The UX decisions for the Game Tools Hub are shaped around a sci‑fi theme with darker colours, reflecting the atmosphere of strategy games. The goal was to create an interface that feels modern, slightly futuristic, and comfortable to use during long sessions, while still keeping everything simple and functional.
 
 ### Clarity
-The layout stays clean and minimal so players can focus on the tools without distractions. Each page has a single purpose, reducing the amount of information on screen at once. This mirrors the way players typically use external resources during strategy games — quickly, efficiently, and often mid‑match. This will help users that usually play x5 speed matches on supremacy, matches of that speed can be quite intense and may result in frustration if the tools arent loading up quickly.
+The layout stays clean and minimal so players can focus on the tools without distractions.
 
 ### Accessibility
-The darker colour palette was chosen to reduce eye strain, especially for players who alt‑tab frequently or play in low‑light environments. High‑contrast text and simple typography help keep everything readable. Semantic HTML ensures the site remains accessible across devices and screen sizes. I'll try to make sure that the neon ui aint too bright in order to ensure that theres no eye strain on the user.
+The darker colour palette was chosen to reduce eye strain, especially for players who alt‑tab frequently or play in low‑light environments.
 
 ### Consistency
-All pages follow the same structural pattern: a dark background, neon‑style accents, and a clean header/footer layout. This consistency helps reinforce the sci‑fi theme while making navigation predictable. Whether a player is checking tools, guides, or game info, the interface feels unified. Majority of the ui will be more consistent in order to improve the load time.
+All pages follow the same structural pattern: a dark background, neon‑style accents, and a clean header/footer layout.
 
 ### Engagement
-The sci‑fi style adds personality without overwhelming the content. Tool cards, glowing borders, and subtle hover effects give the site a sense of depth and interactivity. Even before the tools are fully implemented, the design communicates that this is a functional hub built for players. I'll try to further improve upon the actual sci-fi/ cyberpunk style with some animations i'm trying to experiment with that i've found on instagram from a user called **dark css**.
+The sci‑fi style adds personality without overwhelming the content.
 
 ### Efficiency
-The site avoids unnecessary frameworks and heavy scripts to keep loading times fast. Strategy players often switch between the game and external tools, so the interface needs to be lightweight and responsive. The dark theme also helps the site blend naturally with the look of many modern strategy games. Usually when it comes to loading times on tools for games its very heavy loading i personally remember playing a game called elite dangerous and the website had to reduce its visual look to make it run smoother making it feel a bit cluttered in some areas and empty in other sections. 
+The site avoids unnecessary frameworks and heavy scripts to keep loading times fast.
 
 ### Player‑Focused Design
-The overall structure reflects the original motivation behind the project: making it easier for players to access clear, simple tools without digging through wikis or spreadsheets. The sci‑fi aesthetic supports that goal by giving the site a focused, tactical feel — something that matches the mindset of players who want to optimise, plan, and improve their gameplay. In turn it makes the site feel more spread out by that i mean that the site won't look like its just for supremacy 1914 which is a ww1 era game so the design would've been a bit less freeing to work around and may seem less appealing to browse around.
-
-
-
-
+The overall structure reflects the original motivation behind the project: making it easier for players to access clear, simple tools without digging through wikis or spreadsheets.
 
 ---
-
-
 
 ## HTML Bug Report 
 
@@ -299,12 +256,7 @@ The overall structure reflects the original motivation behind the project: makin
 | Footer looked different on one page | I forgot to paste the full footer into that file | Copied the correct footer markup over |
 | The game UI showed when it shouldn’t | I removed the inline `display:none` but didn’t replace it anywhere | Added a `.game-ui { display: none; }` rule in CSS |
 
-
-
-
-
-
-
+---
 
 ## CSS Bug Report
 
@@ -321,9 +273,9 @@ The overall structure reflects the original motivation behind the project: makin
 | Navigation links stacked vertically on desktop | I left `flex-direction: column` active on larger screens | Updated the nav styling to switch to `row` on wider viewports |
 | Hero banner text wasn’t centered | The parent container didn’t have `text-align: center` | Added the missing rule to the banner section |
 | Game UI wasn’t hidden on page load | I removed the inline `display:none` but forgot to add it in CSS | Added `.game-ui { display: none; }` to the stylesheet |
+| Background image wasn't showing up | The neongrid.jpg file was corrupted - it loaded fine but wouldn't actually display | Replaced the image with a working copy |
 
-
-
+---
 
 ## JS Bug Report
 
@@ -345,14 +297,16 @@ The overall structure reflects the original motivation behind the project: makin
 | Minigame buttons weren’t being detected | The selectors in JS didn’t match the IDs in the HTML (`startButton` vs `start-btn`) | Updated the selectors so they match the actual IDs used in the markup |
 | Click counter stayed stuck at 0 | The click event was firing, but the wrong variable name was being updated | Pointed the update to the correct display element (`click-count`) so the number actually changes |
 | Timer didn’t stop at 0 | The interval kept running because the stop condition wasn’t clearing it | Added `clearInterval(timer)` inside the `if (time <= 0)` block to shut the timer off properly |
-
-
-
+| Healing calculator went over 100% and gave wrong values | I didn’t realise healing is based on missing HP and compounds daily | Used the correct formula and clamped the final HP with Math.min(100, hp + healed) |
+| Missing bracket caused script to stop running | I forgot a closing `}` in one of the event listeners | Added the missing bracket so the file parses correctly |
+| Calculator broke because of a typo in a variable name | I typed `heallOutput` instead of `healOutput` | Corrected the variable name so it matches the element ID |
+| Function wouldn’t run due to a missing parenthesis | I left out a `)` in the `addEventListener` callback | Closed the parenthesis so the function executes normally |
+| Got “Unexpected token” in console | I accidentally left a comma at the end of an object | Removed the extra comma so the JS is valid again |
+| Script failed because of mismatched quotes | Mixed single and double quotes in the same string | Rewrote the string using one consistent quote style |
+| Calculator wasn't displaying results | Link wasn't working in my html | Added in the correct src link |
 
 
 ---
-
-
 
 ## Expectations vs Actual Outcomes
 
@@ -364,15 +318,6 @@ Just keeping track of a few things I expected to work one way but didn’t, and 
 | JS should run when the page loads | Console showed nothing | I had the script tag in the wrong place, moved it before `</body>` |
 | Hover effect on nav links should work | No hover color at all | Forgot the `transition` line, added it back |
 | Card glow should be subtle | Glow was way too bright | Tweaked the shadow values until it looked right |
-
-
-
----
-
-
-
-
-
 
 ---
 

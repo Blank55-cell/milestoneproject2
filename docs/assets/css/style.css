@@ -1,0 +1,218 @@
+/* Layout for the entire site */
+
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+
+body {
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+background-color: #0b0e16;
+color: #e6e6e6;
+line-height: 1.6;
+}
+
+
+/* Links */
+a {
+color: #5ecbff;
+text-decoration: none;
+}
+
+
+a:hover {
+text-decoration: underline;
+}
+
+
+/* Nav + Header */
+header {
+background-color: #181818;
+padding: 1rem 1.5rem;
+border-bottom: 1px solid #333;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+
+.brand {
+font-size: 1.3rem;
+font-weight: 600;
+color: #0ffbf8;
+}
+
+
+nav a {
+margin-left: 1rem;
+padding: 0.4rem 0.8rem;
+border-radius: 6px;
+transition: 0.2s ease;
+}
+
+
+nav a:hover {
+background-color: #0d0f17;
+color: #5ee277;
+}
+
+
+/* Main content area */
+main {
+max-width: 1100px;
+margin: 0 auto;
+padding: 2rem 1.5rem;
+}
+
+
+/* Video */
+.video-box {
+max-width: 350px;
+margin: 1.5rem auto;
+}
+
+
+.video-box video {
+width: 100%;
+border-radius: 10px;
+display: block;
+}
+
+
+/* Hero banner section */
+.section-banner {
+background-image: url(../images/neongrid.jpg);
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+padding: 4rem 2rem;
+border-radius: 10px;
+text-align: center;
+min-height: 300px;
+display: block;
+position: relative;
+z-index: 1;
+}
+
+
+/* Section blocks */
+.section-block {
+position: relative;
+z-index: 2;
+}
+
+
+.section-subtitle {
+font-size: 2.2rem;
+font-weight: 600;
+color: #5ee2ff;
+margin-bottom: 0.5rem;
+}
+
+
+.tagline {
+color: #7f8496; 
+margin-bottom: 1.5rem;
+}
+
+
+/* Tool card grid */
+.tools-grid {
+display: grid; 
+gap: 1rem;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+
+/* Individual cards */
+.tool-cards { 
+background-color: #080a12; /* darker card */ 
+border: 1px solid #131622; 
+border-radius: 8px;
+padding: 1rem; 
+transition: 0.25s ease; 
+}
+
+
+.tool-cards:hover { 
+border-color: #5ee2ff;
+background-color: #0c0f1a; 
+box-shadow: 0 0 12px rgba(94, 226, 255, 0.25); /* subtle neon glow */ 
+}
+
+
+.tool-title { 
+font-size: 1.1rem; 
+font-weight: 600; 
+color: #5ee2ff; 
+margin-bottom: 0.4rem; 
+}
+
+
+.tool-description { 
+color: #a4a8b8; 
+margin-bottom: 0.8rem; 
+}
+
+
+/* Buttons */
+.tool-button { 
+display: inline-block; 
+padding: 0.3rem 0.7rem; 
+border-radius: 4px; 
+border: 1px solid #5ee2ff; 
+font-size: 0.8rem; 
+}
+
+
+.tools-button:active {
+transform: scale(0.95);
+}
+
+
+.tool-button.disabled { 
+border-color: #333; 
+color: #666; 
+}
+
+
+/* Footer */
+footer { 
+margin-top: 3rem; 
+padding: 1rem; 
+text-align: center; 
+color: #7f8496; 
+border-top: 1px solid #0f111a; 
+}
+
+
+/* Animations (testing) */
+@keyframes neon-flicker {
+    0%, 100% { text-shadow: 0 0 6px #0ffbf8; }
+    92% { text-shadow: 0 0 2px #0ffbf8;}
+    95% {text-shadow: 0 0 8px #0ffbf8}
+} 
+
+
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 6px rgba(94, 226, 255, 0.25); }
+    50% { box-shadow: 0 0 14px rgba(94, 226, 255, 0.25); }
+}
+
+
+.section-title {
+    color: #0ffbf8;
+    text-shadow: 0 0 4px #0ffbf8;
+    animation: neon-flicker 2.5s infinite;
+}
+
+.tool-cards,
+.tool-button {
+    animation: pulse-glow 3s ease-in-out infinite;
+}
+/* Footer */
+/* Might alter as ive decided to change the layout of the css and would rather avoid any css rules clashing */

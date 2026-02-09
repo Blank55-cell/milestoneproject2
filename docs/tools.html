@@ -3,67 +3,137 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <!-- Basic SEO -->
-    <meta name="description" content="Game Tools Hub - simple tools, guides, and planners for strategy games like Supremacy 1914." /> 
-    <meta name="keywords" content="Supremacy 1914, strategy tools, game calculators, planners, guides" /> 
-    <meta name="author" content="Carlos" />
+  <meta name="description" content="Game Tools Hub - simple tools, guides, and planners for strategy games like Supremacy 1914." />
+  <meta name="keywords" content="Supremacy 1914, strategy tools, game calculators, planners, guides" />
+  <meta name="author" content="Carlos"/>
+
   <title>Tools</title>
 
+  <!-- Bootstrap + my CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/stylle.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body>
 
-<header>
-  <div class="brand">Tools Hub</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="game.html">Games</a>
-    <a href="tools.html">Tools</a>
-    <a href="guide.html">Guides</a>
-  </nav>
-</header>
+<!-- Main nav -->
+<nav>
+  <a href="index.html">Home</a>
+  <a href="game.html">Games</a>
+  <a href="tools.html">Tools</a>
+  <a href="guide.html">Guides</a>
+</nav>
 
 <main>
 
+  <!-- Page intro -->
   <section class="intro">
     <h1>Tools</h1>
-    <p class="tagline">Interactive tools for Supremacy 1914 and other strategy games.</p>
+    <p class="tagline">Interactive tools and quick references for Supremacy 1914.</p>
   </section>
 
+  <!-- Tools grid -->
   <section>
     <div class="tools-grid">
 
+      <!-- Healing Calculator -->
       <div class="tool-cards">
         <div class="tool-title">Healing Calculator</div>
-          <p class="tool-description">Estimate recovery time for damaged units.</p>
+        <p class="tool-description">Estimate how long it takes your units to recover.</p>
 
-          <input id="unitsInput" type="number" placeholder="Units" class="form-control mb-2">
-          <input id="hoursInput" type="number" placeholder="Hours" class="form-control mb-2">
+        <!-- HP input -->
+        <input id="unitsInput" type="number" placeholder="HP %" class="form-control mb-2">
 
-          <button id="healButton" class="tool-button">Calculate</button>
+        <!-- Days input -->
+        <input id="hoursInput" type="number" placeholder="Days" class="form-control mb-2">
 
-         <p id="healOutput" class="mt-2"></p>
-       </div>
-  
-  
+        <!-- Button that triggers JS -->
+        <button id="healButton" class="tool-button">Calculate</button>
 
-      <div class="tool-cards">
-        <div class="tool-title">Stack Helper</div>
-        <p class="tool-description">Plan balanced army compositions.</p>
-        <span class="tool-button disabled">Coming Soon</span>
+        <!-- JS output -->
+        <p id="healOutput" class="mt-2"></p>
+
+        <!-- Extra info -->
+        <div class="tool-box mt-2">
+          <p><strong>Useful to know:</strong></p>
+          <ul class="small-list">
+            <li>Units only heal while standing still in your own provinces</li>
+            <li>Core provinces heal faster than conquered ones</li>
+            <li>No healing during movement or combat</li>
+            <li>Mixed-HP stacks heal at the pace of the lowest units</li>
+          </ul>
+        </div>
+
+        <p>
+          <em>Game mechanics © Bytro Labs GmbH.</em>
+        </p>
       </div>
 
+      <!-- Combat Modifier Chart -->
       <div class="tool-cards">
-        <div class="tool-title">Resource Planner</div>
-        <p class="tool-description">Track production and shortages.</p>
-        <span class="tool-button disabled">Coming Soon</span>
+        <div class="tool-title">Combat Modifier Chart</div>
+        <p class="tool-description">A quick look at what actually affects combat strength.</p>
+
+        <!-- Main modifier list -->
+        <div class="tool-box">
+          <ul class="small-list">
+            <li><strong>Fortress Bonus:</strong> +50% to +150% defense depending on level</li>
+            <li><strong>Entrenchment:</strong> Units dig in over time and defend better</li>
+            <li><strong>Morale:</strong> High morale boosts stats, low morale weakens them</li>
+            <li><strong>Stacking Penalty:</strong> Huge stacks lose efficiency</li>
+            <li><strong>Range Advantage:</strong> Artillery and railguns deal damage safely</li>
+            <li><strong>Fire Control:</strong> Controls when and how your units engage</li>
+          </ul>
+        </div>
+
+        <!-- Extra notes -->
+        <div class="tool-box mt-2">
+          <p><strong>Extra notes:</strong></p>
+          <ul class="small-list">
+            <li>Fortresses only help on defense</li>
+            <li>Moving resets entrenchment completely</li>
+            <li>Morale below 50% hits harder than most players expect</li>
+            <li>Artillery works best with infantry screens in front</li>
+            <li>Fire Control helps avoid unwanted fights</li>
+          </ul>
+        </div>
+
+        <p class="credit-note mt-2">
+          <em>Information based on official Supremacy 1914 mechanics © Bytro Labs GmbH.</em>
+        </p>
       </div>
 
+      <!-- Unit Stats Reference -->
       <div class="tool-cards">
-        <div class="tool-title">Commander Reference</div>
-        <p class="tool-description">Quick lookup for bonuses and effects.</p>
-        <span class="tool-button disabled">Coming Soon</span>
+        <div class="tool-title">Unit Stats Reference</div>
+        <p class="tool-description">Quick stats for the most common units.</p>
+
+        <!-- Base stats -->
+        <div class="tool-box">
+          <ul class="small-list">
+            <li><strong>Infantry:</strong> 1.0 attack / 1.0 defense</li>
+            <li><strong>Cavalry:</strong> 2.0 attack / 1.5 defense</li>
+            <li><strong>Artillery:</strong> 1.5 attack / 1.0 defense (ranged)</li>
+            <li><strong>Armored Car:</strong> 3.0 attack / 3.0 defense</li>
+          </ul>
+        </div>
+
+        <!-- Player tips -->
+        <div class="tool-box mt-2">
+          <p><strong>Tips:</strong></p>
+          <ul class="small-list">
+            <li>Infantry are cheap and reliable for holding lines</li>
+            <li>Cavalry are great earl-game for grabbing territory fast</li>
+            <li>Artillery wins fights without taking hits if positioned right</li>
+            <li>Armored Cars are solid defenders for important provinces</li>
+          </ul>
+        </div>
+
+        <p class="credit-note mt-2">
+          <em>Unit stats sourced from in-game information © Bytro Labs GmbH.</em>
+        </p>
       </div>
 
     </div>
@@ -76,12 +146,13 @@
 </footer>
 
 <!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
-integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Custom JS -->
+<!-- My JS -->
 <script src="assets/js/script.js"></script>
 
 </body>
 </html>
+
+
 

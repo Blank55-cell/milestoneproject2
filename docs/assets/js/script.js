@@ -52,7 +52,37 @@ if (startButton && clickButton) {
 }
 
 
+// Had to remove the code for the tools as my javascript file started getting cluttered will add in my tools now 
 
+// Healing calculator
+const unitsInput = document.querySelector("#unitsInput");
+const hoursInput = document.querySelector("#hoursInput");
+const healButton = document.querySelector("#healButton");
+const healOutput = document.querySelector("#healOutput");
 
+if (unitsInput && hoursInput && healButton && healOutput) {
+    healButton.addEventListener("click", () => {
+        // I placed in units instead of hp i was daydreaming and confused it
+        const hp = Number(unitsInput.value); 
+        const hours = Number(hoursInput.value);
 
+        // Basic checks to ensure only numbers are processed 
+        if (isNaN(hp) || isNaN(hours) || hp <= 0 || hours < 0) {
+            healOutput.textContent = "Please enter a valid number.";
+            return;
+        }
+
+        const days = hours / 24;
+        const rate = 0.15; // 15% healing per day 
+        const missing = 100 - hp;
+
+        // Real healing formula 
+        const healed = missing * (1 - Math.pow(1 - rate, days));
+        const newHP = Math.min(100, hp + healed);
+
+        healOutput.textContent = `Estimated HP after healing: ${newHP.toFixed(1)}%`;
+    });    
+}
+
+       
 

@@ -1,3 +1,5 @@
+/*global document, setInterval, clearInterval */
+
 // --- Minigame ---
 let time = 5;
 let clicks = 0;
@@ -8,81 +10,129 @@ const clickButton = document.querySelector("#click-btn");
 const timeDisplay = document.querySelector("#time-left");
 const clickCountDisplay = document.querySelector("#click-count");
 
-// ✔ Fixed: added null checks so this only runs on the game page
+// ✓ Fixed: click button was active before game started.
+//   Now disabled by default.
 if (startButton && clickButton) {
+    clickButton.disabled = true;
+    startButton.addEventListener("click", startGame);
+    clickButton.addEventListener("click", registerClick);
+}
 
-    // ✔ Fixed: click button was active before game started — now disabled by default
+function startGame() {
+    clickButton.disabled = false;
+    clicks = 0;
+    time = 5;
+
+    // ✓ Fixed: wrong variable names.
+    //   (Was using clickCount and timeLeft instead of the correct ones.)
+    clickCountDisplay.textContent = clicks;
+    timeDisplay.textContent = time;
+
+    timer = setInterval(updateTimer, 1000);
+}
+
+function updateTimer() {
+    time -= 1;
+    timeDisplay.textContent = time;
+
+    if (time <= 0) {
+        endGame();
+    }
+}
+
+function registerClick() {
+    clicks += 1;
+    clickCountDisplay.textContent = clicks;
+}
+
+function endGame() {
+    clearInterval(timer);
     clickButton.disabled = true;
 
-    startButton.addEventListener("click", () => {
-        // ✔ Fixed: click button now activates only after start
-        clickButton.disabled = false;
-
-        // ✔ Fixed: reset values properly before each round
-        clicks = 0;
-        time = 5;
-
-        // ✔ Fixed: wrong variable names (was using clickCount and timeLeft instead of correct ones)
-        clickCountDisplay.textContent = clicks;
-        timeDisplay.textContent = time;
-
-        // ✔ Fixed: timer now stops cleanly at 0
-        timer = setInterval(() => {
-            time--;
-            timeDisplay.textContent = time;
-
-            if (time <= 0) {
-                clearInterval(timer);
-                clickButton.disabled = true;
-
-                // Fixed: display final score properly 
-                const resultDisplay = document.querySelector("#game-results");
-                if (resultDisplay) {
-                    resultDisplay.textContent = `Final score: ${clicks} clicks`; 
-                }
-            }
-        }, 1000);
-    });
-
-    // ✔ Fixed: click button now increments score properly
-    clickButton.addEventListener("click", () => {
-        clicks++;
-        clickCountDisplay.textContent = clicks;
-    });
+    const resultDisplay = document.querySelector("#game-results");
+    if (resultDisplay) {
+        resultDisplay.textContent = "Final score: " + clicks + " clicks";
+    }
 }
 
 
-// Had to remove the code for the tools as my javascript file started getting cluttered will add in my tools now 
 
-// Healing calculator
+// --- Healing calculator ---
 const unitsInput = document.querySelector("#unitsInput");
 const hoursInput = document.querySelector("#hoursInput");
 const healButton = document.querySelector("#healButton");
 const healOutput = document.querySelector("#healOutput");
 
 if (unitsInput && hoursInput && healButton && healOutput) {
-    healButton.addEventListener("click", () => {
-        // I placed in units instead of hp i was daydreaming and confused it
-        const hp = Number(unitsInput.value); 
-        const hours = Number(hoursInput.value);
-
-        // Basic checks to ensure only numbers are processed 
-        if (isNaN(hp) || isNaN(hours) || hp <= 0 || hours < 0) {
-            healOutput.textContent = "Please enter a valid number.";
-            return;
-        }
-
-        const days = hours / 24;
-        const rate = 0.15; // 15% healing per day 
-        const missing = 100 - hp;
-
-        // Real healing formula 
-        const healed = missing * (1 - Math.pow(1 - rate, days));
-        const newHP = Math.min(100, hp + healed);
-
-        healOutput.textContent = `Estimated HP after healing: ${newHP.toFixed(1)}%`;
-    });    
+    healButton.addEventListener("click", handleHealing);
 }
 
-       
+function getHealingInputs() {
+    return {
+        hours: Number(hoursInput.value),
+        hp: Number(unitsInput.value)
+    };
+}
+
+function calculateHealing(hp, hours) {
+    const days = hours / 24;
+    const rate = 0.15;
+    const missing = 100 - hp;
+
+    // Real healing formula (✓ fixed extra parenthesis)
+    const healed = missing * (1 - Math.pow(1 - rate, days));
+    return Math.min(100, hp + healed);
+}
+
+function displayHealingResult(value) {
+    healOutput.textContent =
+    "Estimated HP after healing: " + value.toFixed(1) + "%";
+}
+
+function handleHealing() {
+    const data = getHealingInputs();
+    const hp = data.hp;
+    const hours = data.hours;
+
+    if (Number.isNaN(hp) || Number.isNaN(hours) || hp <= 0 || hours < 0) {
+        healOutput.textContent = "Please enter a valid number.";
+        return;
+    }
+
+    const result = calculateHealing(hp, hours);
+    displayHealingResult(result);
+}
+
+
+
+// --- Random Tip Generator ---
+const tips = [
+    "Always scout before committing your army.",
+    "Keep morale high to avoid surprise weaknesses.",
+    "Use artillery to soften targets before attacking.",
+    "Avoid stacking too many units in one place.",
+    "Secure your economy before expanding aggressively."
+];
+
+function getRandomTip() {
+    const index = Math.floor(Math.random() * tips.length);
+    return tips[index];
+}
+
+function displayTip(text) {
+    const output = document.querySelector("#tipOutput");
+    if (output) {
+        output.textContent = text;
+    }
+}
+
+function handleTipClick() {
+    const tip = getRandomTip();
+    displayTip(tip);
+}
+
+const tipButton = document.querySelector("#tipButton");
+if (tipButton) {
+    tipButton.addEventListener("click", handleTipClick);
+}
 

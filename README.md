@@ -21,6 +21,11 @@ This is a small project I'm building to collect simple tools for strategy games.
 - [CSS Bug Report](#css-bug-report)  
 - [JS Bug Report](#js-bug-report)  
 - [Expectations vs Actual Outcomes](#expectations-vs-actual-outcomes)  
+- [Project Purpose](#project-purpose)  
+- [Automated Testing](#automated-testing)  
+- [Manual Testing](#manual-testing)  
+- [Testing Summary](#testing-summary)  
+- [External Code Attribution](#external-code-attribution) 
 - [Disclaimer](#disclaimer)
 
 ---
@@ -32,7 +37,9 @@ This is a small project I'm building to collect simple tools for strategy games.
 - **JavaScript** / **BootStrap**  
 - **Git**  
 - **Pythontutor**  
-- **JSlint**
+- **JSlint**  
+- **Mozilla**
+- **W3C**
 
 ### VSS extensions used:
 - **Betteralign**  
@@ -122,9 +129,8 @@ This is where all the calculators and planners will live. For now, it has a plac
 The site is meant to stay clean and easy to read. The layout uses simple fonts, clear spacing, and a dark background that works well during long gaming sessions. There are no ads or distracting elements, and the pages are kept light so they load quickly on both desktop and mobile.
 
 ---
-## Planned Page Layouts
 
-These are the general layouts planned for each page as the project grows.
+## Planned Page Layouts
 
 ### index.html
 - Title and short description  
@@ -178,27 +184,125 @@ These are the general layouts planned for each page as the project grows.
 
 ---
 
+## External Code Attribution
+
+While building the tools, I used MDN Web Docs as a reference for certain JavaScript behaviours. This mainly included checking how `querySelector` works, how event listeners should be set up, and how built‑in functions like `Math.pow`, `Math.min`, and number conversion behave. These were used only as references to understand the correct behaviour — no code was copied directly.
+
+Whenever something was influenced by MDN guidance, I added a small comment in the JavaScript file above the relevant line to show where the idea came from.
+
+### References Used
+- MDN Web Docs – `querySelector()`  
+- MDN Web Docs – Event listeners (`addEventListener`)  
+- MDN Web Docs – Number handling (`Number()`, `Number.isNaN`)  
+- MDN Web Docs – Math functions (`Math.pow`, `Math.min`, rounding methods)  
+- MDN Web Docs – General DOM manipulation  
+- MDN Web Docs – Input validation patterns  
+
+I didn't use any external libraries or third‑party scripts for the logic in the calculators or the minigame.
+
+
+---
 ## Website Testing
 
-Manual testing will be documented here through the use of w3c for html pages and css:
+### Wireframe (Figma)
+Design reference used during development:  
+https://www.figma.com/design/NkMCeERwO1t8OX6QAdHeW9/milestone-project-2?node-id=0-1
 
-### Navigation
-- 
+---
 
-### Layout
-- 
+## HTML Validation
 
-### JavaScript
-- 
+All pages were tested using the W3C Markup Validation Service.  
+Screenshots are stored in `docs/assets/validator/`.
 
-### Responsiveness
-- 
+- Home Page  
+  `docs/assets/validator/indexvalid.png`
 
-### Validation
-- 
+- Tools Page  
+  `docs/assets/validator/toolsvalid.png`
 
-### Page-by-Page Testing
-- Will add tables in once testing begins. Each section will have either a table of the testing conducted or an image of any succesful passes either carried out by w3c validator or chrome lighhouse i changed it to this manner to avoid the testing areas being cluttered around my README.md as it made the layout look disorganised
+- Guides Page  
+  `docs/assets/validator/guidevalid.png`
+
+- Game Page  
+  `docs/assets/validator/gamevalid.png`
+
+---
+
+## JavaScript Linting (JSLint)
+
+JavaScript files were checked using JSLint to ensure clean syntax and best practices. 
+
+`docs/assets/testing/jslint.png`
+
+---
+
+## Lighthouse Testing
+
+Performance, accessibility, best practices, and SEO were tested using Lighthouse in Chrome DevTools.  
+Screenshots stored in `docs/assets/lighthouse/`.
+
+- Home Page  
+  `docs/assets/lighthouse/indexlighthouse.png`
+
+- Tools Page  
+  `docs/assets/lighthouse/toolslighthouse.png`
+
+- Guides Page  
+  `docs/assets/lighthouse/guidelighthouse.png`
+
+- Minigame Page  
+  `docs/assets/lighthouse/minigamelighthouse.png`
+
+---
+
+## Responsiveness Testing
+
+The site was tested on multiple screen sizes using Chrome DevTools and physical devices.  
+Screenshots stored in `docs/assets/responsiveness/`.
+
+- Mobile View  
+  `docs/assets/responsiveness/mobile.png`
+
+- Tablet View  
+  `docs/assets/responsiveness/tablet.png`
+
+- Desktop View  
+  `docs/assets/responsiveness/laptop.png`
+
+---
+
+## Navigation Testing
+
+| Test | Expected | Result |
+|------|----------|--------|
+| Navbar links | Navigate to correct pages | Pass |
+| Footer text | Displays correctly | Pass |
+| Browser back/forward | Pages load without errors | Pass |
+
+---
+
+## Feature Testing
+
+### Random Strategy Tip Button
+- Expected: Generates a new tip on each click  
+- Result: Pass
+
+### Minigame
+- Expected: Timer, scoring, and interactions work correctly  
+- Result: Pass
+
+---
+
+## Accessibility Testing
+
+| Test | Result |
+|------|--------|
+| Alt text on images | Pass |
+| Keyboard navigation | Pass |
+| Semantic HTML structure | Pass |
+| Colour contrast | Pass |
+
 
 ---
 
@@ -273,7 +377,7 @@ The overall structure reflects the original motivation behind the project: makin
 | Navigation links stacked vertically on desktop | I left `flex-direction: column` active on larger screens | Updated the nav styling to switch to `row` on wider viewports |
 | Hero banner text wasn’t centered | The parent container didn’t have `text-align: center` | Added the missing rule to the banner section |
 | Game UI wasn’t hidden on page load | I removed the inline `display:none` but forgot to add it in CSS | Added `.game-ui { display: none; }` to the stylesheet |
-| Background image wasn't showing up | The neongrid.jpg file was corrupted - it loaded fine but wouldn't actually display | Replaced the image with a working copy |
+| Background image wasn't showing up | The neongrid.jpg file was corrupted | Replaced the image with a working copy |
 
 ---
 
@@ -304,7 +408,17 @@ The overall structure reflects the original motivation behind the project: makin
 | Got “Unexpected token” in console | I accidentally left a comma at the end of an object | Removed the extra comma so the JS is valid again |
 | Script failed because of mismatched quotes | Mixed single and double quotes in the same string | Rewrote the string using one consistent quote style |
 | Calculator wasn't displaying results | Link wasn't working in my html | Added in the correct src link |
-
+| Undeclared `document` | JSLint requires browser globals to be declared | Added `/*global document, setInterval, clearInterval */` at the top of the file |
+| Arrow functions flagged | JSLint prefers standard `function` syntax in some cases | Replaced arrow functions with regular functions |
+| Missing braces on single‑line `if` | JSLint enforces braces for clarity | Wrapped all single‑line `if` statements in `{ }` |
+| Lines longer than 80 characters | Comments exceeded JSLint’s max line length | Split long comments into shorter lines |
+| Indentation warning | Wrapped line wasn’t indented correctly under `=` | Adjusted indentation in `displayHealingResult()` |
+| Property order warning | JSLint enforces alphabetical ordering inside objects | Reordered `{ hours, hp }` in `getHealingInputs()` |
+| Use `Number.isNaN` instead of `isNaN` | JSLint discourages the loose `isNaN()` check | Replaced with `Number.isNaN()` |
+| Unexpected trailing spaces | Extra whitespace at the end of comment lines | Removed trailing spaces |
+| Extra parenthesis in healing formula | Typo created invalid syntax | Fixed the formula to `Math.pow(1 - rate, days)` |
+| JSLint unable to finish | Caused by the syntax error above | Corrected the parenthesis so JSLint could parse the file |
+| Event listener safety check | Script would error if the button didn’t exist | Added `if (tipButton)` guard to prevent null errors |
 
 ---
 
@@ -318,6 +432,28 @@ Just keeping track of a few things I expected to work one way but didn’t, and 
 | JS should run when the page loads | Console showed nothing | I had the script tag in the wrong place, moved it before `</body>` |
 | Hover effect on nav links should work | No hover color at all | Forgot the `transition` line, added it back |
 | Card glow should be subtle | Glow was way too bright | Tweaked the shadow values until it looked right |
+
+---
+
+## Project Purpose
+
+The project is made to create a handful of simple, game‑style tools that are quick to use and easy to understand. Each one gives instant feedback based on what the player enters, whether that’s working out healing time, trying a short click‑speed minigame, or getting a random strategy tip. The aim is to make things clearer for newer players without sending them through long wiki pages or spreadsheets. Everything is kept lightweight and straightforward so players can pick up the basics without any hassle the inclusion of guides is there as well to help them to branch out to other areas in order to help them better understand many more of the game mechanics available.
+
+---
+
+## Automated Testing
+
+Automated testing was carried out using **JSLint** to check the JavaScript for structural issues. This included things like:
+
+- missing or extra parentheses  
+- undeclared globals  
+- indentation problems  
+- long comment lines  
+- missing braces on single‑line `if` statements  
+- inconsistent property ordering  
+- trailing spaces  
+
+Running the code through JSLint helped catch problems early, such as the extra `)` in the healing formula, incorrect indentation in `displayHealingResult()`, and a few long comments that needed splitting. Fixing these made the script cleaner and prevented hidden errors from causing issues later
 
 ---
 

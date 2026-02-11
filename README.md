@@ -22,12 +22,10 @@ This is a small project I'm building to collect simple tools for strategy games.
 - [JS Bug Report](#js-bug-report)  
 - [Expectations vs Actual Outcomes](#expectations-vs-actual-outcomes)  
 - [Project Purpose](#project-purpose)  
-- [Automated Testing](#automated-testing)  
-- [Manual Testing](#manual-testing)  
-- [Testing Summary](#testing-summary)  
+- [Automated Testing](#automated-testing)     
 - [External Code Attribution](#external-code-attribution) 
 - [Disclaimer](#disclaimer)
-
+- [CSS Validation](#css-validation)
 ---
 
 ### Tools Used:
@@ -210,22 +208,31 @@ https://www.figma.com/design/NkMCeERwO1t8OX6QAdHeW9/milestone-project-2?node-id=
 
 ---
 
+## CSS Validation
+
+This project’s stylesheets have been checked using the **W3C CSS Validator** to ensure standards‑compliant, accessible, and reliable CSS.
+
+![W3C CSS Validator](docs/assets/validator/cssvalid.png)
+
+
+---
+
 ## HTML Validation
 
 All pages were tested using the W3C Markup Validation Service.  
 Screenshots are stored in `docs/assets/validator/`.
 
 - Home Page  
-  `docs/assets/validator/indexvalid.png`
+  ![Home-page](docs/assets/validator/indexvalid.png)
 
 - Tools Page  
-  `docs/assets/validator/toolsvalid.png`
+  ![Tools-page](docs/assets/validator/toolsvalid.png)
 
 - Guides Page  
-  `docs/assets/validator/guidevalid.png`
+  ![Guides-page](docs/assets/validator/guidevalid.png)
 
 - Game Page  
-  `docs/assets/validator/gamevalid.png`
+  ![Game-page](docs/assets/validator/gamevalid.png)
 
 ---
 
@@ -233,7 +240,7 @@ Screenshots are stored in `docs/assets/validator/`.
 
 JavaScript files were checked using JSLint to ensure clean syntax and best practices. 
 
-`docs/assets/testing/jslint.png`
+[Jslint](docs/assets/testing/jslint.png)
 
 ---
 
@@ -243,16 +250,16 @@ Performance, accessibility, best practices, and SEO were tested using Lighthouse
 Screenshots stored in `docs/assets/lighthouse/`.
 
 - Home Page  
-  `docs/assets/lighthouse/indexlighthouse.png`
+  ![Home-page](docs/assets/lighthouse/indexlighthouse.png)
 
 - Tools Page  
-  `docs/assets/lighthouse/toolslighthouse.png`
+  ![Tools](docs/assets/lighthouse/toolslighthouse.png)
 
 - Guides Page  
-  `docs/assets/lighthouse/guidelighthouse.png`
+  ![Guide-page](docs/assets/lighthouse/guidelighthouse.png)
 
 - Minigame Page  
-  `docs/assets/lighthouse/minigamelighthouse.png`
+  ![Minigame-page](docs/assets/lighthouse/minigamelighthouse.png)
 
 ---
 
@@ -262,13 +269,13 @@ The site was tested on multiple screen sizes using Chrome DevTools and physical 
 Screenshots stored in `docs/assets/responsiveness/`.
 
 - Mobile View  
-  `docs/assets/responsiveness/mobile.png`
+  ![](docs/assets/responsiveness/mobile.png)
 
 - Tablet View  
-  `docs/assets/responsiveness/tablet.png`
+  ![](docs/assets/responsiveness/tablet.png)
 
 - Desktop View  
-  `docs/assets/responsiveness/laptop.png`
+  ![](docs/assets/responsiveness/laptop.png)
 
 ---
 
@@ -443,7 +450,7 @@ The project is made to create a handful of simple, game‑style tools that are q
 
 ## Automated Testing
 
-Automated testing was carried out using **JSLint** to check the JavaScript for structural issues. This included things like:
+Automated testing was carried out in the form of RAG to check the JavaScript for structural issues. This included things like:
 
 - missing or extra parentheses  
 - undeclared globals  
@@ -453,7 +460,7 @@ Automated testing was carried out using **JSLint** to check the JavaScript for s
 - inconsistent property ordering  
 - trailing spaces  
 
-Running the code through JSLint helped catch problems early, such as the extra `)` in the healing formula, incorrect indentation in `displayHealingResult()`, and a few long comments that needed splitting. Fixing these made the script cleaner and prevented hidden errors from causing issues later
+Running the code through this method helped catch problems early, such as the extra `)` in the healing formula, incorrect indentation in `displayHealingResult()`, and a few long comments that needed splitting. Fixing these made the script cleaner and prevented hidden errors from causing issues later
 
 ---
 

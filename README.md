@@ -26,6 +26,8 @@ This is a small project I'm building to collect simple tools for strategy games.
 - [External Code Attribution](#external-code-attribution) 
 - [Disclaimer](#disclaimer)
 - [CSS Validation](#css-validation)
+- [Manual Testing](#manual-testing)
+
 ---
 
 ### Tools Used:
@@ -453,14 +455,33 @@ The project is made to create a handful of simple, game‑style tools that are q
 Automated testing was carried out in the form of RAG to check the JavaScript for structural issues. This included things like:
 
 - missing or extra parentheses  
-- undeclared globals  
 - indentation problems  
 - long comment lines  
 - missing braces on single‑line `if` statements  
 - inconsistent property ordering  
 - trailing spaces  
 
-Running the code through this method helped catch problems early, such as the extra `)` in the healing formula, incorrect indentation in `displayHealingResult()`, and a few long comments that needed splitting. Fixing these made the script cleaner and prevented hidden errors from causing issues later
+Running the code through this method helped catch problems early, such as the extra `)` in the healing formula, incorrect indentation in `displayHealingResult()`, and a few long comments that needed splitting. Fixing these made the script cleaner and prevented hidden errors from causing issues later 
+
+---
+
+## Manual Testing
+
+Manual testing was carried out by using the site directly in the browser and checking how each page behaved. Most of this was done through Chrome DevTools, switching between different screen sizes and interacting with every feature to make sure nothing broke.
+
+This included things like:
+
+- clicking every navbar link to confirm it opened the correct page  
+- checking that the footer displayed properly across all pages  
+- testing the healing calculator with normal, empty, and invalid inputs  
+- running the clicker minigame to check the timer, click counter, and button behaviour  
+- clicking the random strategy tip button multiple times to confirm it always generated a new tip  
+- navigating the site using only the keyboard to check basic accessibility  
+- reviewing colour contrast and readability on the dark theme  
+- checking layout changes at different breakpoints in DevTools  
+
+Doing this helped catch small issues early, such as spacing inconsistencies, minor alignment problems, and a few areas where text needed adjusting for readability. Fixing these made the site feel smoother and more consistent across different screen sizes.
+
 
 ---
 
